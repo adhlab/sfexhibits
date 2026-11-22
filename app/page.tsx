@@ -89,7 +89,7 @@ export default function Home() {
       <a className="tws-skip" href="#exhibition">Skip to the exhibition</a>
       <header className="tws-header">
         <a className="tws-mark" href="#top" aria-label="Those Who Stayed home">
-          <span>Those Who</span><strong>Stayed</strong>
+          <Image src={asset("/images/those-who-stayed/wordmark-white.png")} width={1056} height={274} alt="" priority />
         </a>
         <nav aria-label="Exhibition navigation">
           <a href="#exhibition">The story</a>
@@ -108,7 +108,10 @@ export default function Home() {
         </div>
         <div className="tws-hero-copy">
           <p className="tws-kicker">A digital companion to the exhibition</p>
-          <h1 id="hero-title"><span>Those Who</span><strong>Stayed</strong></h1>
+          <h1 id="hero-title">
+            <span className="visually-hidden">Those Who Stayed</span>
+            <Image src={asset("/images/those-who-stayed/wordmark-white.png")} width={1056} height={274} alt="" priority />
+          </h1>
           <p className="tws-deck">Faith, family, work, creativity, and community in Jackson&apos;s historic Farish Street neighborhood.</p>
           <a className="tws-button" href="#exhibition">Enter the exhibition <span aria-hidden="true">↓</span></a>
         </div>
@@ -193,7 +196,7 @@ export default function Home() {
       </section>
 
       <footer className="tws-footer">
-        <div className="tws-mark"><span>Those Who</span><strong>Stayed</strong></div>
+        <div className="tws-mark"><Image src={asset("/images/those-who-stayed/wordmark-white.png")} width={1056} height={274} alt="Those Who Stayed" /></div>
         <p>Presented by Scott Ford Houses Inc., the African American Digital Humanities Lab, and Monument Lab.</p>
         <a href="#top">Back to top ↑</a>
       </footer>
