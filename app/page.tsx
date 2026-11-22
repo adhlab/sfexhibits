@@ -11,9 +11,10 @@ const zones = [
     title: "The Living Room & Richard Beadle",
     copy: "Begin in the room where family stories are held and shared. Portraits made by Jackson photographer Richard Henry Beadle gave Black families the power to preserve how they saw themselves—and how they wanted to be remembered.",
     prompt: "Look closely: What can a room, a pose, or a photograph tell us about belonging?",
-    image: "/images/interpretive/scott-ford-family-portrait.webp",
-    alt: "Historic portrait of members of the Scott-Ford family",
-    caption: "The Scott-Ford family archive",
+    image: "/images/those-who-stayed/richard-beadle.jpg",
+    alt: "Portrait of Jackson photographer Richard Henry Beadle",
+    caption: "Richard Henry Beadle (1884–1971), photographer",
+    credit: "Image selected from the Living Room wall interpretation.",
     tone: "indigo",
   },
   {
@@ -23,9 +24,10 @@ const zones = [
     title: "Fashion & Self-Presentation",
     copy: "Clothing carried meaning. What people wore to church, work, celebrations, and portrait studios expressed skill, aspiration, respectability, pleasure, and personal style.",
     prompt: "Notice the details: fabric, hats, posture, and the care involved in being seen.",
-    image: "/images/archive/coll438.jpg",
-    alt: "Historic portrait from the Scott-Ford archive",
-    caption: "A portrait from the family archive",
+    image: "/images/those-who-stayed/zones/fashion-bessie.jpg",
+    alt: "Studio portrait of Ms. Bessie Shader wearing a patterned dress and elaborate hat",
+    caption: "Ms. Bessie Shader, ca. 1918",
+    credit: "From the “Made, Mended, Worn” wall panel.",
     tone: "plum",
   },
   {
@@ -35,9 +37,10 @@ const zones = [
     title: "Around the Kitchen Table",
     copy: "The kitchen table was more than a place to eat. Here, families prepared food, stretched resources, exchanged news, raised funds, made plans, and passed knowledge between generations.",
     prompt: "Listen for the conversations that turn an ordinary table into community infrastructure.",
-    image: "/images/site/community-gathering.jpg",
-    alt: "Community members gathered together around a table",
-    caption: "Gathering, exchange, and collective care",
+    image: "/images/those-who-stayed/zones/kitchen-barbecue.jpg",
+    alt: "A group of women gathered around a table at an outdoor barbecue",
+    caption: "Barbecue at “Ms. Mitchell’s” in 1958",
+    credit: "From the “Around the Kitchen Table” wall panel.",
     tone: "rust",
   },
   {
@@ -47,9 +50,10 @@ const zones = [
     title: "Midwives & the Work of Care",
     copy: "Black midwives attended births, cared for mothers and infants, shared supplies, and carried practical knowledge from woman to woman. Their work rested on trust, experience, and enduring relationships.",
     prompt: "Consider care as expertise: Who teaches it, who receives it, and how does it survive?",
-    image: "/images/those-who-stayed/virginia-portrait.jpg",
-    alt: "Portrait of Virginia Scott-Ford, a Jackson midwife",
-    caption: "Virginia Scott-Ford, midwife and community caregiver",
+    image: "/images/those-who-stayed/zones/midwives-pillars.jpg",
+    alt: "Eliza Farish Pillars speaking to a large gathering of Mississippi midwives",
+    caption: "Eliza Farish Pillars addressing a gathering of Mississippi midwives, circa 1930s",
+    credit: "Pillars worked between state public health and community practice. From the “Who Could Practice?” wall panel.",
     tone: "teal",
   },
   {
@@ -59,9 +63,10 @@ const zones = [
     title: "Food, Commerce & the Grocery Store",
     copy: "Neighborhood stores supplied daily necessities, extended informal credit, circulated news, and created livelihoods. Commerce on and around Farish Street connected household survival to a wider Black business community.",
     prompt: "A grocery store can also be a network: What moves through it besides goods?",
-    image: "/images/interpretive/farish-street.webp",
-    alt: "Historic street scene on Farish Street in Jackson, Mississippi",
-    caption: "Farish Street, a center of Black commerce and exchange",
+    image: "/images/those-who-stayed/zones/commerce-juke.jpg",
+    alt: "Two patrons dancing together inside a juke joint",
+    caption: "Patrons dancing at a juke joint, 1939",
+    credit: "From the “Where We Gathered” wall panel.",
     tone: "gold",
   },
   {
@@ -71,9 +76,10 @@ const zones = [
     title: "Barber & Beauty Culture",
     copy: "Barbershops and beauty salons joined enterprise with artistry. They were places to shape an appearance, earn a living, trade information, debate events, and spend time in trusted company.",
     prompt: "Think about the chair as both workplace and gathering place.",
-    image: "/images/archive/coll203.jpg",
-    alt: "Historic photograph from the Scott-Ford archive",
-    caption: "Style, enterprise, and conversation",
+    image: "/images/those-who-stayed/zones/barber-conic.jpg",
+    alt: "Historic exterior of Conic’s Beauty-Barber Supply storefront",
+    caption: "Conic’s Beauty-Barber Supply storefront",
+    credit: "From the “In the Chair” wall panel.",
     tone: "blue",
   },
   {
@@ -83,9 +89,10 @@ const zones = [
     title: "Labor, Skill & Livelihood",
     copy: "Labor happened across fields, kitchens, yards, washhouses, workshops, and city businesses. Paid and unpaid work sustained families while linking rural Mississippi to Jackson’s neighborhood economy.",
     prompt: "Ask which kinds of labor history records—and which kinds it too often overlooks.",
-    image: "/images/interpretive/washhouse.webp",
-    alt: "Historic washhouse associated with the Scott-Ford property",
-    caption: "Domestic labor, skilled work, and neighborhood exchange",
+    image: "/images/those-who-stayed/zones/labor-farish-business.jpg",
+    alt: "Workers gathered inside a Farish Street business",
+    caption: "Farish Street business interior scene, 20th century",
+    credit: "From the “Work Close to Home” wall panel.",
     tone: "rust",
   },
   {
@@ -95,9 +102,10 @@ const zones = [
     title: "The Front Porch",
     copy: "The porch was a threshold: private and public, restful and productive. People shelled vegetables, repaired clothing, watched children, greeted neighbors, exchanged news, and let conversation unfold.",
     prompt: "Pause here. What becomes possible in a space that belongs to both home and community?",
-    image: "/images/interpretive/lula-ford-house-historic.webp",
-    alt: "Historic view of a Scott-Ford house and its front porch",
-    caption: "The porch as workspace, lookout, and place of welcome",
+    image: "/images/those-who-stayed/zones/family-automobile.jpg",
+    alt: "Children standing beside an automobile outside the Scott-Ford Houses",
+    caption: "Carrie-Belle Ford Oatis’s children outside the Scott-Ford Houses",
+    credit: "From the exhibition’s Scott-Ford family photograph wall.",
     tone: "green",
   },
   {
@@ -107,9 +115,10 @@ const zones = [
     title: "Churches as Community Space",
     copy: "Black churches were more than places of worship. They supported education, music, mutual aid, civic participation, organizing, and collective action through repeated acts of care.",
     prompt: "Notice how faith, service, and public life meet in the same space.",
-    image: "/images/site/stewardship-gathering.jpeg",
-    alt: "Community members gathered in a shared space",
-    caption: "Worship, fellowship, mutual aid, and civic life",
+    image: "/images/those-who-stayed/zones/church-mt-helm.jpg",
+    alt: "Historic photograph of Mt. Helm Baptist Church with a membership directory",
+    caption: "Mt. Helm Baptist Church, one of Jackson’s historic Black congregations",
+    credit: "The church provided a center for worship, community life, and education. From the “More Than Places of Worship” wall panel.",
     tone: "plum",
   },
   {
@@ -119,9 +128,10 @@ const zones = [
     title: "A Final Reflection",
     copy: "These rooms and gathering places reveal care as an everyday practice: feeding, teaching, tending, making, worshipping, listening, and staying connected. The story continues in what descendants and neighbors choose to remember and protect.",
     prompt: "What practice of care will you carry with you from this exhibition?",
-    image: "/images/site/houses-preservation.jpeg",
-    alt: "The Scott-Ford Houses in Jackson, Mississippi",
-    caption: "Preserving place keeps many forms of memory in conversation",
+    image: "/images/those-who-stayed/zones/harrison-preservation.jpg",
+    alt: "Dr. Alferdteen Harrison standing inside a Scott-Ford House before restoration",
+    caption: "Dr. Alferdteen Harrison inside the Scott-Ford Houses prior to restoration",
+    credit: "From the “Virginia Scott-Ford: The Work of Care” wall panel.",
     tone: "indigo",
   },
 ];
@@ -226,6 +236,7 @@ export default function Home() {
       </header>
 
       <section className="water-threshold water-opening" aria-labelledby="opening-title">
+        <div className="water-art" aria-hidden="true"><Image src={asset("/images/those-who-stayed/water-wave.png")} fill alt="" priority sizes="100vw" /></div>
         <div className="water-rings" aria-hidden="true"><i /><i /><i /></div>
         <div className="water-copy">
           <p className="guide-kicker">A digital guide to the exhibition</p>
@@ -236,6 +247,7 @@ export default function Home() {
       </section>
 
       <section id="journey" className="guide-intro">
+        <Image className="journey-street" src={asset("/images/those-who-stayed/farish-street-cutout.png")} width={401} height={1115} alt="Historic Farish Street with the Booker T sign and parked automobiles" />
         <div>
           <p className="guide-kicker">Those Who Stayed</p>
           <h2>Move through the spaces where community was made.</h2>
@@ -258,7 +270,7 @@ export default function Home() {
             <section id={zone.id} className={`guide-zone tone-${zone.tone}`} key={zone.id} aria-labelledby={`${zone.id}-title`}>
               <div className="zone-image">
                 <Image src={asset(zone.image)} fill sizes="(max-width: 800px) 100vw, 52vw" alt={zone.alt} />
-                <p>{zone.caption}</p>
+                <div className="zone-caption"><strong>{zone.caption}</strong><span>{zone.credit}</span></div>
               </div>
               <div className="zone-copy">
                 <div className="zone-number"><span>Zone</span>{zone.number}</div>
@@ -290,6 +302,7 @@ export default function Home() {
       </div>
 
       <section className="water-threshold water-closing" aria-labelledby="closing-title">
+        <div className="water-art" aria-hidden="true"><Image src={asset("/images/those-who-stayed/water-wave.png")} fill alt="" sizes="100vw" /></div>
         <div className="water-rings" aria-hidden="true"><i /><i /><i /></div>
         <div className="water-copy">
           <p className="guide-kicker">A final current</p>
@@ -300,6 +313,7 @@ export default function Home() {
       </section>
 
       <section id="visit" className="guide-visit">
+        <Image className="visit-sign" src={asset("/images/those-who-stayed/farish-sign.png")} width={382} height={338} alt="Farish Street Historic District street sign" />
         <div><p className="guide-kicker">Continue in person</p><h2>Visit <em>Those Who Stayed</em></h2></div>
         <div><p><strong>Smith Robertson Museum</strong><br />528 Bloom Street<br />Jackson, Mississippi 39202</p><a href="https://www.jacksonms.gov/government/parks-and-recreation/smith-robertson-museum/">Plan your visit ↗</a></div>
       </section>
@@ -307,6 +321,11 @@ export default function Home() {
       <footer className="guide-footer">
         <Image src={asset("/images/those-who-stayed/wordmark-white.png")} width={1056} height={274} alt="Those Who Stayed" />
         <p>Presented by Scott Ford Houses Inc., the African American Digital Humanities Lab, and Monument Lab.</p>
+        <div className="partner-logos" aria-label="Exhibition partners">
+          <Image src={asset("/images/those-who-stayed/aadhl-logo.png")} width={109} height={109} alt="The African American Digital Humanities Lab" />
+          <Image src={asset("/images/those-who-stayed/scott-ford-logo.png")} width={864} height={574} alt="Scott Ford Houses Inc." />
+          <Image src={asset("/images/those-who-stayed/smith-robertson-logo.png")} width={155} height={148} alt="Smith Robertson Museum and Cultural Center" />
+        </div>
         <a href="#top">Back to the beginning ↑</a>
       </footer>
     </main>
