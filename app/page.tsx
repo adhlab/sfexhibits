@@ -11,10 +11,12 @@ const zones = [
     title: "The Living Room & Richard Beadle",
     copy: "Begin in the room where family stories are held and shared. Portraits made by Jackson photographer Richard Henry Beadle gave Black families the power to preserve how they saw themselves—and how they wanted to be remembered.",
     prompt: "Look closely: What can a room, a pose, or a photograph tell us about belonging?",
-    image: "/images/those-who-stayed/richard-beadle.jpg",
-    alt: "Portrait of Jackson photographer Richard Henry Beadle",
-    caption: "Richard Henry Beadle (1884–1971), photographer",
-    credit: "Image selected from the Living Room wall interpretation.",
+    image: "/images/interpretive/scott-ford-family-portrait.webp",
+    aspect: "4 / 5",
+    position: "50% 48%",
+    alt: "Historic portrait of two members of the Scott-Ford family",
+    caption: "A portrait from the Scott-Ford family archive",
+    credit: "Family photographs preserve how generations chose to be seen and remembered.",
     tone: "indigo",
   },
   {
@@ -25,6 +27,8 @@ const zones = [
     copy: "Clothing carried meaning. What people wore to church, work, celebrations, and portrait studios expressed skill, aspiration, respectability, pleasure, and personal style.",
     prompt: "Notice the details: fabric, hats, posture, and the care involved in being seen.",
     image: "/images/those-who-stayed/zones/fashion-bessie.jpg",
+    aspect: "4 / 5",
+    position: "50% 34%",
     alt: "Studio portrait of Ms. Bessie Shader wearing a patterned dress and elaborate hat",
     caption: "Ms. Bessie Shader, ca. 1918",
     credit: "From the “Made, Mended, Worn” wall panel.",
@@ -38,6 +42,8 @@ const zones = [
     copy: "The kitchen table was more than a place to eat. Here, families prepared food, stretched resources, exchanged news, raised funds, made plans, and passed knowledge between generations.",
     prompt: "Listen for the conversations that turn an ordinary table into community infrastructure.",
     image: "/images/those-who-stayed/zones/kitchen-barbecue.jpg",
+    aspect: "4 / 5",
+    position: "50% 42%",
     alt: "A group of women gathered around a table at an outdoor barbecue",
     caption: "Barbecue at “Ms. Mitchell’s” in 1958",
     credit: "From the “Around the Kitchen Table” wall panel.",
@@ -51,6 +57,8 @@ const zones = [
     copy: "Black midwives attended births, cared for mothers and infants, shared supplies, and carried practical knowledge from woman to woman. Their work rested on trust, experience, and enduring relationships.",
     prompt: "Consider care as expertise: Who teaches it, who receives it, and how does it survive?",
     image: "/images/those-who-stayed/zones/midwives-pillars.jpg",
+    aspect: "4 / 3",
+    position: "52% 58%",
     alt: "Eliza Farish Pillars speaking to a large gathering of Mississippi midwives",
     caption: "Eliza Farish Pillars addressing a gathering of Mississippi midwives, circa 1930s",
     credit: "Pillars worked between state public health and community practice. From the “Who Could Practice?” wall panel.",
@@ -64,6 +72,8 @@ const zones = [
     copy: "Neighborhood stores supplied daily necessities, extended informal credit, circulated news, and created livelihoods. Commerce on and around Farish Street connected household survival to a wider Black business community.",
     prompt: "A grocery store can also be a network: What moves through it besides goods?",
     image: "/images/those-who-stayed/zones/commerce-juke.jpg",
+    aspect: "4 / 5",
+    position: "50% 40%",
     alt: "Two patrons dancing together inside a juke joint",
     caption: "Patrons dancing at a juke joint, 1939",
     credit: "From the “Where We Gathered” wall panel.",
@@ -77,6 +87,8 @@ const zones = [
     copy: "Barbershops and beauty salons joined enterprise with artistry. They were places to shape an appearance, earn a living, trade information, debate events, and spend time in trusted company.",
     prompt: "Think about the chair as both workplace and gathering place.",
     image: "/images/those-who-stayed/zones/barber-conic.jpg",
+    aspect: "1 / 1",
+    position: "50% 52%",
     alt: "Historic exterior of Conic’s Beauty-Barber Supply storefront",
     caption: "Conic’s Beauty-Barber Supply storefront",
     credit: "From the “In the Chair” wall panel.",
@@ -90,6 +102,8 @@ const zones = [
     copy: "Labor happened across fields, kitchens, yards, washhouses, workshops, and city businesses. Paid and unpaid work sustained families while linking rural Mississippi to Jackson’s neighborhood economy.",
     prompt: "Ask which kinds of labor history records—and which kinds it too often overlooks.",
     image: "/images/those-who-stayed/zones/labor-farish-business.jpg",
+    aspect: "5 / 4",
+    position: "50% 42%",
     alt: "Workers gathered inside a Farish Street business",
     caption: "Farish Street business interior scene, 20th century",
     credit: "From the “Work Close to Home” wall panel.",
@@ -103,6 +117,8 @@ const zones = [
     copy: "The porch was a threshold: private and public, restful and productive. People shelled vegetables, repaired clothing, watched children, greeted neighbors, exchanged news, and let conversation unfold.",
     prompt: "Pause here. What becomes possible in a space that belongs to both home and community?",
     image: "/images/those-who-stayed/zones/family-automobile.jpg",
+    aspect: "5 / 4",
+    position: "61% 58%",
     alt: "Children standing beside an automobile outside the Scott-Ford Houses",
     caption: "Carrie-Belle Ford Oatis’s children outside the Scott-Ford Houses",
     credit: "From the exhibition’s Scott-Ford family photograph wall.",
@@ -116,6 +132,8 @@ const zones = [
     copy: "Black churches were more than places of worship. They supported education, music, mutual aid, civic participation, organizing, and collective action through repeated acts of care.",
     prompt: "Notice how faith, service, and public life meet in the same space.",
     image: "/images/those-who-stayed/zones/church-mt-helm.jpg",
+    aspect: "4 / 3",
+    position: "53% 48%",
     alt: "Historic photograph of Mt. Helm Baptist Church with a membership directory",
     caption: "Mt. Helm Baptist Church, one of Jackson’s historic Black congregations",
     credit: "The church provided a center for worship, community life, and education. From the “More Than Places of Worship” wall panel.",
@@ -129,6 +147,8 @@ const zones = [
     copy: "These rooms and gathering places reveal care as an everyday practice: feeding, teaching, tending, making, worshipping, listening, and staying connected. The story continues in what descendants and neighbors choose to remember and protect.",
     prompt: "What practice of care will you carry with you from this exhibition?",
     image: "/images/those-who-stayed/zones/harrison-preservation.jpg",
+    aspect: "1 / 1",
+    position: "50% 48%",
     alt: "Dr. Alferdteen Harrison standing inside a Scott-Ford House before restoration",
     caption: "Dr. Alferdteen Harrison inside the Scott-Ford Houses prior to restoration",
     credit: "From the “Virginia Scott-Ford: The Work of Care” wall panel.",
@@ -271,8 +291,8 @@ export default function Home() {
           const details = zoneDetails[zone.id];
           return (
             <section id={zone.id} className={`guide-zone tone-${zone.tone}`} key={zone.id} aria-labelledby={`${zone.id}-title`}>
-              <div className="zone-image">
-                <Image src={asset(zone.image)} fill sizes="(max-width: 800px) 100vw, 52vw" alt={zone.alt} />
+              <div className="zone-image" style={{ aspectRatio: zone.aspect }}>
+                <Image src={asset(zone.image)} fill sizes="(max-width: 800px) 100vw, 43vw" alt={zone.alt} style={{ objectPosition: zone.position }} />
                 <div className="zone-caption"><strong>{zone.caption}</strong><span>{zone.credit}</span></div>
               </div>
               <div className="zone-copy">
