@@ -2658,12 +2658,8 @@ body { text-rendering: optimizeLegibility; }
 .guide-header nav a:hover { text-decoration: underline; text-underline-offset: 6px; }
 .guide-kicker { margin: 0 0 20px; font-size: 12px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
 .water-threshold { position: relative; min-height: 100svh; display: grid; place-items: center; isolation: isolate; color: white; background: #132950; }
-.water-threshold::before, .water-threshold::after {
-  content: ""; position: absolute; z-index: -2; left: -10%; width: 120%; height: 42%; border-radius: 50%; filter: blur(1px);
-}
-.water-threshold::before { bottom: -18%; background: #1f6f83; transform: rotate(-4deg); }
-.water-threshold::after { bottom: -29%; background: #61aabd; transform: rotate(4deg); opacity: .75; }
-.water-art { position: absolute; z-index: -1; inset: auto 0 -2px; height: min(54vw, 620px); opacity: .9; }
+.water-threshold::before, .water-threshold::after { display: none; }
+.water-art { position: absolute; z-index: -1; inset: 0; opacity: 1; overflow: hidden; }
 .water-art img { object-fit: contain; object-position: center bottom; }
 .water-opening { background: radial-gradient(circle at 78% 20%, #315e73 0, transparent 28%), linear-gradient(145deg, #071a38 15%, #123d55 58%, #1d6474); }
 .water-copy { width: min(780px, 84vw); position: relative; z-index: 2; padding: 140px 0 160px; }
