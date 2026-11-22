@@ -2962,3 +2962,55 @@ body { text-rendering: optimizeLegibility; }
   .zone-image, .guide-zone:nth-child(even) .zone-image { width: min(100%, 520px); min-height: 0; aspect-ratio: 4 / 5; }
   .zone-copy { padding: 0; }
 }
+
+/* Artwork-led opening: cream paper, Farish Street, wordmark, then water. */
+.guide-header {
+  color: #102650;
+  background: rgba(247, 241, 231, .97);
+  border-bottom-color: rgba(41, 58, 145, .16);
+}
+.guide-header nav a { color: #102650; }
+.water-opening { display: block; color: #143f40; background: #f7f1e7; }
+.water-opening .water-art { z-index: 0; width: 100%; height: min(25vw, 330px); bottom: -2%; }
+.hero-street {
+  left: 0;
+  right: auto;
+  bottom: 0;
+  width: min(40vw, 560px);
+  height: calc(100% - 88px);
+  opacity: .92;
+}
+.hero-street img { object-position: left bottom; }
+.water-opening .water-copy {
+  z-index: 3;
+  width: min(650px, 48vw);
+  margin: 0 8vw 0 auto;
+  padding: clamp(150px, 17vh, 205px) 0 210px;
+}
+.hero-wordmark { display: block; width: min(620px, 100%); height: auto; margin: 8px 0 34px; }
+.water-opening .guide-kicker { color: #6d436d; }
+.water-opening .hero-subtitle {
+  max-width: 610px;
+  margin: 0 0 24px;
+  color: #123f40;
+  font-size: clamp(22px, 2.1vw, 31px);
+  font-weight: 800;
+  line-height: 1.25;
+}
+.water-opening .water-copy > p:not(.guide-kicker):not(.hero-subtitle) {
+  max-width: 580px;
+  color: #315656;
+  font-size: 17px;
+  line-height: 1.55;
+}
+.water-opening .guide-enter { margin-top: 27px; }
+
+@media (max-width: 800px) {
+  .guide-header { color: #102650; background: #f7f1e7; }
+  .guide-header nav a { color: #102650; }
+  .hero-street { left: -20%; right: auto; width: 85vw; height: 58%; opacity: .14; }
+  .water-opening .water-copy { width: auto; margin: 0 24px; padding: 135px 0 210px; }
+  .hero-wordmark { margin-bottom: 26px; }
+  .water-opening .hero-subtitle { font-size: 22px; }
+  .water-opening .water-art { height: 42vw; bottom: 0; }
+}

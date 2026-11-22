@@ -225,7 +225,7 @@ export default function Home() {
       <a className="guide-skip" href="#journey">Skip to the journey</a>
       <header className="guide-header">
         <a href="#top" className="guide-logo" aria-label="Those Who Stayed home">
-          <Image src={asset("/images/those-who-stayed/wordmark-white.png")} width={1056} height={274} alt="Those Who Stayed" priority />
+          <Image src={asset("/images/those-who-stayed/wordmark-blue.png")} width={1056} height={274} alt="Those Who Stayed" priority />
         </a>
         <nav aria-label="Exhibition guide">
           <a href="#journey">Journey</a>
@@ -241,8 +241,10 @@ export default function Home() {
         <div className="hero-street" aria-hidden="true"><Image src={asset("/images/those-who-stayed/farish-street-cutout.png")} fill alt="" priority sizes="(max-width: 800px) 80vw, 38vw" /></div>
         <div className="water-copy">
           <p className="guide-kicker">A digital guide to the exhibition</p>
-          <h1 id="opening-title">Explore the spaces where community was made.</h1>
-          <p>Step into the spaces where Black families in Jackson made home, practiced care, built livelihoods, and sustained community across generations.</p>
+          <h1 id="opening-title" className="visually-hidden">Those Who Stayed</h1>
+          <Image className="hero-wordmark" src={asset("/images/those-who-stayed/wordmark-blue.png")} width={1056} height={274} alt="" priority />
+          <p className="hero-subtitle">Faith, family, work, creativity, and community in Jackson’s historic Farish Street neighborhood.</p>
+          <p>Move through the exhibition zone by zone, explore the stories behind the objects and photographs, and pause with questions to carry into the gallery.</p>
           <a className="guide-enter" href="#journey">Enter the exhibition <span aria-hidden="true">↓</span></a>
         </div>
       </section>
