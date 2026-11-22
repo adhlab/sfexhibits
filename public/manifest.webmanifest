@@ -1,0 +1,8 @@
+{
+  "name": "Those Who Stayed",
+  "short_name": "Those Who Stayed",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4efe5",
+  "theme_color": "#0b2248"
+}
