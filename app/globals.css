@@ -2971,8 +2971,14 @@ body { text-rendering: optimizeLegibility; }
 }
 .guide-header nav a { color: #102650; }
 .water-opening { display: block; color: #143f40; background: #f7f1e7; }
-.water-opening .water-art { z-index: 0; width: 100%; height: min(25vw, 330px); bottom: -2%; }
-.water-opening .water-art img { object-fit: fill; object-position: center bottom; }
+.water-opening .water-art {
+  inset: auto auto -2% -2vw;
+  z-index: 0;
+  width: 104vw;
+  height: min(25vw, 330px);
+  background: url("/images/those-who-stayed/water-wave.png") center bottom / 100% 100% no-repeat;
+}
+.water-opening .water-art img { display: none; }
 .hero-street {
   left: 0;
   right: auto;
@@ -3013,5 +3019,5 @@ body { text-rendering: optimizeLegibility; }
   .water-opening .water-copy { width: auto; margin: 0 24px; padding: 135px 0 210px; }
   .hero-wordmark { margin-bottom: 26px; }
   .water-opening .hero-subtitle { font-size: 22px; }
-  .water-opening .water-art { height: 42vw; bottom: 0; }
+  .water-opening .water-art { left: -3vw; width: 106vw; height: 42vw; bottom: 0; }
 }
