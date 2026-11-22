@@ -3,202 +3,212 @@ import Image from "next/image";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const asset = (path: string) => `${basePath}${path}`;
 
-const themes = [
+const zones = [
   {
     number: "01",
-    title: "Care",
-    subtitle: "Black midwifery in Mississippi",
-    copy: "Across Mississippi and the South, Black midwives sustained generations through skilled care, trusted relationships, and knowledge passed from woman to woman.",
-    image: "/images/those-who-stayed/black-midwifery.jpg",
-    alt: "Interpretive panel about Black midwifery in Mississippi and the South",
-    width: 1600,
-    height: 500,
-    tone: "blue",
+    id: "living-room",
+    eyebrow: "Home as archive",
+    title: "The Living Room & Richard Beadle",
+    copy: "Begin in the room where family stories are held and shared. Portraits made by Jackson photographer Richard Henry Beadle gave Black families the power to preserve how they saw themselves—and how they wanted to be remembered.",
+    prompt: "Look closely: What can a room, a pose, or a photograph tell us about belonging?",
+    image: "/images/interpretive/scott-ford-family-portrait.webp",
+    alt: "Historic portrait of members of the Scott-Ford family",
+    caption: "The Scott-Ford family archive",
+    tone: "indigo",
   },
   {
     number: "02",
-    title: "Family",
-    subtitle: "The Scott-Ford legacy",
-    copy: "From William and Charlotte Butler to the generations who established homes and livelihoods on East Cohea Street, family history reveals resilience, property ownership, and community care.",
-    image: "/images/those-who-stayed/family-tree.jpg",
-    alt: "The Scott-Ford family legacy family tree",
-    width: 1046,
-    height: 1600,
-    tone: "teal",
+    id: "fashion",
+    eyebrow: "Making an appearance",
+    title: "Fashion & Self-Presentation",
+    copy: "Clothing carried meaning. What people wore to church, work, celebrations, and portrait studios expressed skill, aspiration, respectability, pleasure, and personal style.",
+    prompt: "Notice the details: fabric, hats, posture, and the care involved in being seen.",
+    image: "/images/archive/coll438.jpg",
+    alt: "Historic portrait from the Scott-Ford archive",
+    caption: "A portrait from the family archive",
+    tone: "plum",
   },
   {
     number: "03",
-    title: "Work",
-    subtitle: "Labor, skill, and neighborhood exchange",
-    copy: "Porches, yards, kitchens, gardens, fields, and businesses were working spaces. Labor close to home fed families, built livelihoods, and connected rural Mississippi to Farish Street.",
-    image: "/images/those-who-stayed/work-close-to-home.jpg",
-    alt: "Work Close to Home interpretive panel",
-    width: 853,
-    height: 1600,
+    id: "kitchen-table",
+    eyebrow: "Care served daily",
+    title: "Around the Kitchen Table",
+    copy: "The kitchen table was more than a place to eat. Here, families prepared food, stretched resources, exchanged news, raised funds, made plans, and passed knowledge between generations.",
+    prompt: "Listen for the conversations that turn an ordinary table into community infrastructure.",
+    image: "/images/site/community-gathering.jpg",
+    alt: "Community members gathered together around a table",
+    caption: "Gathering, exchange, and collective care",
     tone: "rust",
   },
   {
     number: "04",
-    title: "Faith",
-    subtitle: "More than places of worship",
-    copy: "Churches were centers of worship, education, mutual aid, music, civic participation, and collective action—institutions built through repeated acts of care.",
-    image: "/images/those-who-stayed/places-of-worship.jpg",
-    alt: "More Than Places of Worship interpretive panel",
-    width: 914,
-    height: 1600,
-    tone: "gold",
+    id: "midwives",
+    eyebrow: "Knowledge carried forward",
+    title: "Midwives & the Work of Care",
+    copy: "Black midwives attended births, cared for mothers and infants, shared supplies, and carried practical knowledge from woman to woman. Their work rested on trust, experience, and enduring relationships.",
+    prompt: "Consider care as expertise: Who teaches it, who receives it, and how does it survive?",
+    image: "/images/those-who-stayed/virginia-portrait.jpg",
+    alt: "Portrait of Virginia Scott-Ford, a Jackson midwife",
+    caption: "Virginia Scott-Ford, midwife and community caregiver",
+    tone: "teal",
   },
   {
     number: "05",
-    title: "Creativity",
-    subtitle: "Performance crossroads",
-    copy: "Farish Street connected blues, gospel, jazz, and rhythm and blues with audiences, venues, record makers, and the wider world.",
-    image: "/images/those-who-stayed/performance-crossroads.jpg",
-    alt: "Performance Crossroads interpretive panel",
-    width: 1339,
-    height: 1600,
-    tone: "violet",
+    id: "commerce",
+    eyebrow: "Provision and exchange",
+    title: "Food, Commerce & the Grocery Store",
+    copy: "Neighborhood stores supplied daily necessities, extended informal credit, circulated news, and created livelihoods. Commerce on and around Farish Street connected household survival to a wider Black business community.",
+    prompt: "A grocery store can also be a network: What moves through it besides goods?",
+    image: "/images/interpretive/farish-street.webp",
+    alt: "Historic street scene on Farish Street in Jackson, Mississippi",
+    caption: "Farish Street, a center of Black commerce and exchange",
+    tone: "gold",
   },
   {
     number: "06",
-    title: "Community",
-    subtitle: "Around the kitchen table",
-    copy: "Preparing meals, sharing resources, raising funds, and organizing collective action connected everyday care to a broader commitment to community.",
-    image: "/images/those-who-stayed/label-2.jpg",
-    alt: "Around the Kitchen Table interpretive panel",
-    width: 914,
-    height: 1600,
+    id: "barber-beauty",
+    eyebrow: "In the chair",
+    title: "Barber & Beauty Culture",
+    copy: "Barbershops and beauty salons joined enterprise with artistry. They were places to shape an appearance, earn a living, trade information, debate events, and spend time in trusted company.",
+    prompt: "Think about the chair as both workplace and gathering place.",
+    image: "/images/archive/coll203.jpg",
+    alt: "Historic photograph from the Scott-Ford archive",
+    caption: "Style, enterprise, and conversation",
+    tone: "blue",
+  },
+  {
+    number: "07",
+    id: "labor",
+    eyebrow: "Work close to home",
+    title: "Labor, Skill & Livelihood",
+    copy: "Labor happened across fields, kitchens, yards, washhouses, workshops, and city businesses. Paid and unpaid work sustained families while linking rural Mississippi to Jackson’s neighborhood economy.",
+    prompt: "Ask which kinds of labor history records—and which kinds it too often overlooks.",
+    image: "/images/interpretive/washhouse.webp",
+    alt: "Historic washhouse associated with the Scott-Ford property",
+    caption: "Domestic labor, skilled work, and neighborhood exchange",
+    tone: "rust",
+  },
+  {
+    number: "08",
+    id: "front-porch",
+    eyebrow: "Between home and street",
+    title: "The Front Porch",
+    copy: "The porch was a threshold: private and public, restful and productive. People shelled vegetables, repaired clothing, watched children, greeted neighbors, exchanged news, and let conversation unfold.",
+    prompt: "Pause here. What becomes possible in a space that belongs to both home and community?",
+    image: "/images/interpretive/lula-ford-house-historic.webp",
+    alt: "Historic view of a Scott-Ford house and its front porch",
+    caption: "The porch as workspace, lookout, and place of welcome",
     tone: "green",
   },
-];
-
-const records = [
-  { image: "/images/those-who-stayed/virginia-scott-ford.jpg", width: 868, height: 1600, title: "Virginia Scott-Ford", label: "The work of care" },
-  { image: "/images/those-who-stayed/mary-green-scott.jpg", width: 1600, height: 1600, title: "Mary Green Scott", label: "Property owner and entrepreneur" },
-  { image: "/images/those-who-stayed/canton-midwives.jpg", width: 1600, height: 1013, title: "Midwives of Canton", label: "Community knowledge" },
-  { image: "/images/those-who-stayed/richard-beadle.jpg", width: 1600, height: 1600, title: "Richard Henry Beadle", label: "Photographer" },
-  { image: "/images/those-who-stayed/beadle-marker.jpg", width: 1600, height: 1600, title: "Beadle, the Photographer", label: "A landmark of Farish Street" },
-  { image: "/images/those-who-stayed/label-3.jpg", width: 914, height: 1600, title: "Who Could Practice?", label: "State regulation of midwifery" },
-  { image: "/images/those-who-stayed/label-4.jpg", width: 914, height: 1600, title: "Where We Gathered", label: "Commerce, music, and exchange" },
-  { image: "/images/those-who-stayed/label-5.jpg", width: 914, height: 1600, title: "In the Chair", label: "Style, enterprise, and conversation" },
+  {
+    number: "09",
+    id: "churches",
+    eyebrow: "Institutions of care",
+    title: "Churches as Community Space",
+    copy: "Black churches were more than places of worship. They supported education, music, mutual aid, civic participation, organizing, and collective action through repeated acts of care.",
+    prompt: "Notice how faith, service, and public life meet in the same space.",
+    image: "/images/site/stewardship-gathering.jpeg",
+    alt: "Community members gathered in a shared space",
+    caption: "Worship, fellowship, mutual aid, and civic life",
+    tone: "plum",
+  },
+  {
+    number: "10",
+    id: "reflection",
+    eyebrow: "What we carry",
+    title: "A Final Reflection",
+    copy: "These rooms and gathering places reveal care as an everyday practice: feeding, teaching, tending, making, worshipping, listening, and staying connected. The story continues in what descendants and neighbors choose to remember and protect.",
+    prompt: "What practice of care will you carry with you from this exhibition?",
+    image: "/images/site/houses-preservation.jpeg",
+    alt: "The Scott-Ford Houses in Jackson, Mississippi",
+    caption: "Preserving place keeps many forms of memory in conversation",
+    tone: "indigo",
+  },
 ];
 
 export default function Home() {
   return (
-    <main id="main-content" className="tws-page">
-      <a className="tws-skip" href="#exhibition">Skip to the exhibition</a>
-      <header className="tws-header">
-        <a className="tws-mark" href="#top" aria-label="Those Who Stayed home">
-          <Image src={asset("/images/those-who-stayed/wordmark-white.png")} width={1056} height={274} alt="" priority />
+    <main id="top" className="guide-page">
+      <a className="guide-skip" href="#journey">Skip to the journey</a>
+      <header className="guide-header">
+        <a href="#top" className="guide-logo" aria-label="Those Who Stayed home">
+          <Image src={asset("/images/those-who-stayed/wordmark-white.png")} width={1056} height={274} alt="Those Who Stayed" priority />
         </a>
-        <nav aria-label="Exhibition navigation">
-          <a href="#exhibition">The story</a>
-          <a href="#themes">Explore</a>
-          <a href="#records">People</a>
+        <nav aria-label="Exhibition guide">
+          <a href="#journey">Journey</a>
+          <a href="#living-room">Zones</a>
+          <a href="#reflection">Reflect</a>
           <a href="#visit">Visit</a>
         </nav>
-        <a className="tws-org" href="https://scottfordhouseinc.com">Scott Ford Houses Inc. ↗</a>
       </header>
 
-      <section id="top" className="tws-hero" aria-labelledby="hero-title">
-        <div className="tws-hero-shape shape-one" />
-        <div className="tws-hero-shape shape-two" />
-        <div className="tws-hero-image" aria-hidden="true">
-          <Image src={asset("/images/site/historic-scott-ford-house.png")} alt="" fill priority sizes="(max-width: 800px) 100vw, 46vw" />
+      <section className="water-threshold water-opening" aria-labelledby="opening-title">
+        <div className="water-rings" aria-hidden="true"><i /><i /><i /></div>
+        <div className="water-copy">
+          <p className="guide-kicker">A digital guide to the exhibition</p>
+          <h1 id="opening-title">Every story<br />begins in motion.</h1>
+          <p>Water carries people, memory, grief, and possibility. Here it marks a threshold into stories of Black life in Jackson—stories shaped by the long wake of the Middle Passage and by generations who made home, care, and community.</p>
+          <a className="guide-enter" href="#journey">Enter the exhibition <span aria-hidden="true">↓</span></a>
         </div>
-        <div className="tws-hero-copy">
-          <p className="tws-kicker">A digital companion to the exhibition</p>
-          <h1 id="hero-title">
-            <span className="visually-hidden">Those Who Stayed</span>
-            <Image src={asset("/images/those-who-stayed/wordmark-white.png")} width={1056} height={274} alt="" priority />
-          </h1>
-          <p className="tws-deck">Faith, family, work, creativity, and community in Jackson&apos;s historic Farish Street neighborhood.</p>
-          <a className="tws-button" href="#exhibition">Enter the exhibition <span aria-hidden="true">↓</span></a>
-        </div>
-        <p className="tws-scroll">Jackson, Mississippi <span>•</span> Stories of care across generations</p>
+        <p className="water-note">Begin with water</p>
       </section>
 
-      <section id="exhibition" className="tws-intro tws-paper">
-        <div className="tws-section-index"><span>About</span><strong>00</strong></div>
-        <div className="tws-intro-lead">
-          <p>For generations, African American residents of Jackson have built and sustained the relationships, institutions, and networks of care that make community life possible.</p>
-        </div>
-        <div className="tws-intro-body">
-          <p>During the Great Migration, hundreds of thousands of Black Mississippians left the state in search of greater safety, freedom, and economic opportunity. Others remained. Staying could reflect commitment, opportunity, obligation, constraint—or several of these at once.</p>
-          <p><em>Those Who Stayed</em> explores how care shaped everyday life: tending to health, sharing resources, raising families, worshipping, passing on knowledge, and creating spaces for rest, pleasure, and belonging.</p>
-          <details className="tws-panel-link">
-            <summary>View the original introduction panel</summary>
-            <Image src={asset("/images/those-who-stayed/intro-panel.jpg")} width={984} height={1600} alt="Full Those Who Stayed introductory exhibition panel" />
-          </details>
-        </div>
-      </section>
-
-      <section id="themes" className="tws-themes" aria-labelledby="themes-title">
-        <header className="tws-section-heading">
-          <p>Six ways into the story</p>
-          <h2 id="themes-title">Networks of care</h2>
-          <p>Each pathway connects household life to the people, places, and institutions that sustained Black Jackson.</p>
-        </header>
-        <div className="tws-theme-list">
-          {themes.map((theme) => (
-            <article className={`tws-theme ${theme.tone}`} key={theme.title}>
-              <div className="tws-theme-number">{theme.number}</div>
-              <div className="tws-theme-copy">
-                <p>{theme.subtitle}</p>
-                <h3>{theme.title}</h3>
-                <p>{theme.copy}</p>
-              </div>
-              <details className="tws-theme-panel">
-                <summary><span>Open exhibit panel</span><i aria-hidden="true">↗</i></summary>
-                <div><Image src={asset(theme.image)} width={theme.width} height={theme.height} alt={theme.alt} /></div>
-              </details>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="records" className="tws-records tws-paper" aria-labelledby="records-title">
-        <div className="tws-records-heading">
-          <p className="tws-kicker">Lives in the archive</p>
-          <h2 id="records-title">People, places, and practice</h2>
-          <p>Move deeper into the exhibition through the people, gathering places, businesses, and systems that shaped everyday life in Black Jackson.</p>
-        </div>
-        <div className="tws-record-grid">
-          {records.map((record, index) => (
-            <details className="tws-record" key={record.title}>
-              <summary>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <strong>{record.title}</strong>
-                <em>{record.label}</em>
-                <i aria-hidden="true">View record +</i>
-              </summary>
-              <Image src={asset(record.image)} width={record.width} height={record.height} alt={`${record.title}: ${record.label} exhibit record`} />
-            </details>
-          ))}
-        </div>
-      </section>
-
-      <section className="tws-quote" aria-label="Exhibition reflection">
-        <p>“Care was practiced in homes, churches, businesses, and neighborhoods.”</p>
-        <span>Those Who Stayed</span>
-      </section>
-
-      <section id="visit" className="tws-visit" aria-labelledby="visit-title">
+      <section id="journey" className="guide-intro">
         <div>
-          <p className="tws-kicker">Continue in person</p>
-          <h2 id="visit-title">Visit the exhibition</h2>
+          <p className="guide-kicker">Those Who Stayed</p>
+          <h2>Move through the spaces where community was made.</h2>
         </div>
-        <div className="tws-visit-details">
-          <p><strong>Smith Robertson Museum</strong><br />528 Bloom Street<br />Jackson, Mississippi 39202</p>
-          <p>This digital companion extends the physical exhibition with stories and records you can return to from anywhere.</p>
-          <a className="tws-button dark" href="https://www.jacksonms.gov/government/parks-and-recreation/smith-robertson-museum/">Plan your visit ↗</a>
+        <div>
+          <p>This guide follows the physical exhibition from room to room. Each zone is a way into the relationships, labor, knowledge, and creativity that sustained Black Jackson.</p>
+          <p className="guide-instruction">Scroll in order, or choose a zone below while you move through the gallery.</p>
         </div>
       </section>
 
-      <footer className="tws-footer">
-        <div className="tws-mark"><Image src={asset("/images/those-who-stayed/wordmark-white.png")} width={1056} height={274} alt="Those Who Stayed" /></div>
+      <nav className="zone-index" aria-label="Exhibition zones">
+        {zones.map((zone) => <a key={zone.id} href={`#${zone.id}`}><span>{zone.number}</span>{zone.title}</a>)}
+      </nav>
+
+      <div className="guide-zones">
+        {zones.map((zone, index) => {
+          const next = zones[index + 1];
+          return (
+            <section id={zone.id} className={`guide-zone tone-${zone.tone}`} key={zone.id} aria-labelledby={`${zone.id}-title`}>
+              <div className="zone-image">
+                <Image src={asset(zone.image)} fill sizes="(max-width: 800px) 100vw, 52vw" alt={zone.alt} />
+                <p>{zone.caption}</p>
+              </div>
+              <div className="zone-copy">
+                <div className="zone-number"><span>Zone</span>{zone.number}</div>
+                <p className="guide-kicker">{zone.eyebrow}</p>
+                <h2 id={`${zone.id}-title`}>{zone.title}</h2>
+                <p className="zone-text">{zone.copy}</p>
+                <aside><span>While you’re here</span><p>{zone.prompt}</p></aside>
+                {next && <a className="zone-next" href={`#${next.id}`}>Next: {next.title} <span aria-hidden="true">↓</span></a>}
+              </div>
+            </section>
+          );
+        })}
+      </div>
+
+      <section className="water-threshold water-closing" aria-labelledby="closing-title">
+        <div className="water-rings" aria-hidden="true"><i /><i /><i /></div>
+        <div className="water-copy">
+          <p className="guide-kicker">Return to water</p>
+          <h2 id="closing-title">The water remembers.</h2>
+          <p>The exhibition ends where it began. Water recalls the forced crossing of the Middle Passage, the separations that followed, and the enduring work of making kin, place, and possibility. The current continues through every act of care carried forward.</p>
+          <blockquote>What will you remember—and what will you help carry on?</blockquote>
+        </div>
+      </section>
+
+      <section id="visit" className="guide-visit">
+        <div><p className="guide-kicker">Continue in person</p><h2>Visit <em>Those Who Stayed</em></h2></div>
+        <div><p><strong>Smith Robertson Museum</strong><br />528 Bloom Street<br />Jackson, Mississippi 39202</p><a href="https://www.jacksonms.gov/government/parks-and-recreation/smith-robertson-museum/">Plan your visit ↗</a></div>
+      </section>
+
+      <footer className="guide-footer">
+        <Image src={asset("/images/those-who-stayed/wordmark-white.png")} width={1056} height={274} alt="Those Who Stayed" />
         <p>Presented by Scott Ford Houses Inc., the African American Digital Humanities Lab, and Monument Lab.</p>
-        <a href="#top">Back to top ↑</a>
+        <a href="#top">Back to the beginning ↑</a>
       </footer>
     </main>
   );

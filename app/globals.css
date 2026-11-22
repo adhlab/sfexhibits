@@ -2630,3 +2630,110 @@ body { text-rendering: optimizeLegibility; }
     min-height: 44px;
   }
 }
+
+/* Those Who Stayed — spatial exhibition guide */
+.guide-page {
+  --guide-ink: #092f32;
+  --guide-paper: #f4efe4;
+  --guide-indigo: #172a59;
+  --guide-blue: #263a91;
+  --guide-water: #4c91a7;
+  --guide-gold: #b78b3d;
+  color: var(--guide-ink);
+  background: var(--guide-paper);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: clip;
+}
+.guide-page * { box-sizing: border-box; }
+.guide-skip { position: fixed; top: -100px; left: 16px; z-index: 100; padding: 12px 18px; color: white; background: #000; }
+.guide-skip:focus { top: 16px; }
+.guide-header {
+  position: absolute; inset: 0 0 auto; z-index: 20; height: 98px; padding: 24px clamp(22px, 5vw, 76px);
+  display: flex; align-items: center; justify-content: space-between; gap: 40px; color: white;
+}
+.guide-logo { display: block; width: clamp(180px, 21vw, 300px); line-height: 0; }
+.guide-logo img, .guide-footer img { width: 100%; height: auto; }
+.guide-header nav { display: flex; gap: clamp(18px, 3vw, 44px); }
+.guide-header nav a { color: inherit; text-decoration: none; font-size: 13px; letter-spacing: .13em; text-transform: uppercase; }
+.guide-header nav a:hover { text-decoration: underline; text-underline-offset: 6px; }
+.guide-kicker { margin: 0 0 20px; font-size: 12px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.water-threshold { position: relative; min-height: 100svh; display: grid; place-items: center; isolation: isolate; color: white; background: #132950; }
+.water-threshold::before, .water-threshold::after {
+  content: ""; position: absolute; z-index: -2; left: -10%; width: 120%; height: 42%; border-radius: 50%; filter: blur(1px);
+}
+.water-threshold::before { bottom: -18%; background: #1f6f83; transform: rotate(-4deg); }
+.water-threshold::after { bottom: -29%; background: #61aabd; transform: rotate(4deg); opacity: .75; }
+.water-opening { background: radial-gradient(circle at 78% 20%, #315e73 0, transparent 28%), linear-gradient(145deg, #071a38 15%, #123d55 58%, #1d6474); }
+.water-copy { width: min(780px, 84vw); position: relative; z-index: 2; padding: 140px 0 160px; }
+.water-copy h1, .water-copy h2 { margin: 0 0 30px; max-width: 850px; font-family: Georgia, serif; font-weight: 400; font-size: clamp(58px, 9vw, 130px); line-height: .86; letter-spacing: -.055em; }
+.water-copy h2 { font-size: clamp(56px, 8vw, 112px); }
+.water-copy > p:not(.guide-kicker) { max-width: 660px; font-size: clamp(17px, 2vw, 23px); line-height: 1.55; }
+.guide-enter { display: inline-flex; gap: 28px; margin-top: 28px; padding-bottom: 8px; color: white; border-bottom: 1px solid rgba(255,255,255,.7); text-decoration: none; font-weight: 700; }
+.water-note { position: absolute; right: 5vw; bottom: 36px; writing-mode: vertical-rl; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; opacity: .7; }
+.water-rings { position: absolute; inset: 0; z-index: -1; overflow: hidden; opacity: .36; }
+.water-rings i { position: absolute; width: 52vw; aspect-ratio: 1; border: 1px solid #b8e6e5; border-radius: 50%; right: -6vw; top: 13%; }
+.water-rings i:nth-child(2) { width: 69vw; right: -14vw; top: 4%; }
+.water-rings i:nth-child(3) { width: 88vw; right: -24vw; top: -7%; }
+.guide-intro { padding: clamp(80px, 11vw, 170px) clamp(24px, 8vw, 130px); display: grid; grid-template-columns: 1.15fr .85fr; gap: 8vw; background: #efe8da; }
+.guide-intro h2, .guide-visit h2 { margin: 0; max-width: 760px; font-family: Georgia, serif; font-size: clamp(42px, 6vw, 82px); font-weight: 400; line-height: .98; letter-spacing: -.04em; }
+.guide-intro > div:last-child { padding-top: 44px; font-size: clamp(18px, 2vw, 24px); line-height: 1.55; }
+.guide-instruction { padding-top: 24px; border-top: 1px solid rgba(9,47,50,.3); font-size: 14px; font-weight: 700; }
+.zone-index { padding: 38px clamp(24px, 5vw, 76px); display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; color: white; background: var(--guide-ink); }
+.zone-index a { min-height: 74px; padding: 13px 18px; display: flex; gap: 12px; align-items: flex-start; color: inherit; border-left: 1px solid rgba(255,255,255,.2); text-decoration: none; font-size: 13px; line-height: 1.25; }
+.zone-index a span { color: #7db9bf; font-size: 10px; letter-spacing: .12em; }
+.zone-index a:hover { background: rgba(255,255,255,.08); }
+.guide-zone { --zone: #214d58; min-height: 94svh; display: grid; grid-template-columns: 52% 48%; background: #f7f2e9; border-bottom: 1px solid #d8cebf; }
+.guide-zone:nth-child(even) .zone-image { order: 2; }
+.guide-zone:nth-child(even) .zone-copy { order: 1; }
+.zone-image { position: relative; min-height: 720px; background: var(--zone); overflow: hidden; }
+.zone-image::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 100px rgba(2,20,22,.12); pointer-events: none; }
+.zone-image img { object-fit: cover; filter: saturate(.78) contrast(1.04); transition: transform 1s ease; }
+.guide-zone:hover .zone-image img { transform: scale(1.015); }
+.zone-image p { position: absolute; z-index: 2; left: 24px; right: 24px; bottom: 18px; margin: 0; padding: 9px 12px; width: fit-content; max-width: calc(100% - 48px); color: white; background: rgba(4,27,31,.76); font-size: 11px; line-height: 1.3; }
+.zone-copy { position: relative; padding: clamp(70px, 9vw, 140px) clamp(30px, 7vw, 110px); display: flex; flex-direction: column; justify-content: center; }
+.zone-number { position: absolute; top: 32px; right: 36px; color: var(--zone); font-family: Georgia, serif; font-size: 48px; line-height: 1; }
+.zone-number span { display: block; font-family: Arial, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+.zone-copy .guide-kicker { color: var(--zone); }
+.zone-copy h2 { margin: 0 0 30px; max-width: 700px; color: var(--guide-ink); font-family: Georgia, serif; font-size: clamp(45px, 5.3vw, 78px); font-weight: 400; line-height: .95; letter-spacing: -.045em; }
+.zone-text { margin: 0; max-width: 640px; font-size: clamp(17px, 1.5vw, 21px); line-height: 1.6; }
+.zone-copy aside { margin-top: 38px; padding: 20px 0 0 24px; max-width: 590px; border-top: 1px solid color-mix(in srgb, var(--zone), transparent 55%); border-left: 4px solid var(--zone); }
+.zone-copy aside span { color: var(--zone); font-size: 10px; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
+.zone-copy aside p { margin: 8px 0 0; font-family: Georgia, serif; font-size: 18px; font-style: italic; line-height: 1.45; }
+.zone-next { align-self: flex-start; margin-top: 38px; padding-bottom: 7px; color: var(--guide-ink); border-bottom: 1px solid var(--zone); text-decoration: none; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+.zone-next span { margin-left: 10px; }
+.tone-indigo { --zone: #283b86; }.tone-plum { --zone: #69466d; }.tone-rust { --zone: #9b4b3b; }.tone-teal { --zone: #277984; }.tone-gold { --zone: #a47727; }.tone-blue { --zone: #315f90; }.tone-green { --zone: #416b5b; }
+.water-closing { min-height: 92svh; background: radial-gradient(circle at 20% 78%, #316d7c, transparent 30%), linear-gradient(135deg, #132a54, #0c3e53); }
+.water-closing blockquote { margin: 50px 0 0; max-width: 680px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,.4); font-family: Georgia, serif; font-size: clamp(24px, 3vw, 40px); font-style: italic; line-height: 1.25; }
+.guide-visit { padding: clamp(80px, 10vw, 150px) clamp(24px, 8vw, 130px); display: grid; grid-template-columns: 1.3fr .7fr; gap: 8vw; background: #efe8da; }
+.guide-visit > div:last-child { padding-top: 34px; font-size: 18px; line-height: 1.55; }
+.guide-visit a { display: inline-block; margin-top: 25px; padding: 15px 20px; color: white; background: var(--guide-ink); text-decoration: none; font-weight: 700; }
+.guide-footer { min-height: 260px; padding: 60px clamp(24px, 5vw, 76px); display: grid; grid-template-columns: 260px 1fr auto; align-items: end; gap: 7vw; color: white; background: #071d35; }
+.guide-footer p { margin: 0; max-width: 580px; font-size: 13px; line-height: 1.5; opacity: .78; }
+.guide-footer a { color: white; font-size: 12px; text-decoration: none; }
+
+@media (max-width: 800px) {
+  .guide-header { height: 82px; padding: 20px 22px; }
+  .guide-logo { width: 180px; }
+  .guide-header nav a:not(:first-child):not(:last-child) { display: none; }
+  .guide-header nav { gap: 18px; }
+  .water-copy { width: calc(100% - 44px); padding-top: 135px; }
+  .water-note { display: none; }
+  .guide-intro { grid-template-columns: 1fr; gap: 20px; }
+  .guide-intro > div:last-child { padding-top: 0; }
+  .zone-index { display: flex; padding: 22px; overflow-x: auto; scroll-snap-type: x proximity; }
+  .zone-index a { flex: 0 0 170px; scroll-snap-align: start; }
+  .guide-zone { min-height: auto; grid-template-columns: 1fr; }
+  .guide-zone:nth-child(even) .zone-image, .guide-zone:nth-child(even) .zone-copy { order: initial; }
+  .zone-image { min-height: 63svh; }
+  .zone-copy { padding: 86px 25px 78px; }
+  .zone-number { top: 24px; right: 24px; font-size: 38px; }
+  .zone-copy h2 { padding-right: 24px; }
+  .guide-visit { grid-template-columns: 1fr; gap: 20px; }
+  .guide-footer { grid-template-columns: 1fr; align-items: start; min-height: auto; }
+  .guide-footer img { width: 220px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zone-image img { transition: none; }
+  html { scroll-behavior: auto; }
+}
