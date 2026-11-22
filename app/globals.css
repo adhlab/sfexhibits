@@ -2972,6 +2972,7 @@ body { text-rendering: optimizeLegibility; }
 .guide-header nav a { color: #102650; }
 .water-opening { display: block; color: #143f40; background: #f7f1e7; }
 .water-opening .water-art { z-index: 0; width: 100%; height: min(25vw, 330px); bottom: -2%; }
+.water-opening .water-art img { object-fit: fill; object-position: center bottom; }
 .hero-street {
   left: 0;
   right: auto;
