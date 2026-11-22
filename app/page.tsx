@@ -238,9 +238,10 @@ export default function Home() {
       <section className="water-threshold water-opening" aria-labelledby="opening-title">
         <div className="water-art" aria-hidden="true"><Image src={asset("/images/those-who-stayed/water-wave.png")} fill alt="" priority sizes="100vw" /></div>
         <div className="water-rings" aria-hidden="true"><i /><i /><i /></div>
+        <div className="hero-street" aria-hidden="true"><Image src={asset("/images/those-who-stayed/farish-street-cutout.png")} fill alt="" priority sizes="(max-width: 800px) 80vw, 38vw" /></div>
         <div className="water-copy">
           <p className="guide-kicker">A digital guide to the exhibition</p>
-          <h1 id="opening-title">Those who stayed<br />made a way.</h1>
+          <h1 id="opening-title">Explore the spaces where community was made.</h1>
           <p>Step into the spaces where Black families in Jackson made home, practiced care, built livelihoods, and sustained community across generations.</p>
           <a className="guide-enter" href="#journey">Enter the exhibition <span aria-hidden="true">↓</span></a>
         </div>

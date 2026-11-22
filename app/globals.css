@@ -60,6 +60,132 @@ body {
   .ceremony-litany { display:grid; gap:12px; }.ceremony-litany p { position:static; opacity:1; transform:none; animation:none; font-size:clamp(25px,7vw,44px); }.ceremony-paths { display:none; }
 }
 
+/* Exhibition-system reset: paper, condensed display type, framed archives */
+.guide-page { background: #f6f0e5; }
+.guide-header { height: 88px; background: #102650; border-bottom: 1px solid rgba(255,255,255,.18); }
+.guide-logo { width: clamp(190px, 19vw, 270px); }
+.water-opening {
+  min-height: 100svh;
+  padding-top: 88px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, .72fr);
+  align-items: center;
+  color: #123b3c;
+  background: #f7f1e7;
+  overflow: hidden;
+}
+.water-opening .water-rings { display: none; }
+.water-opening .water-art { z-index: 0; height: min(56.25vw, 100%); top: auto; bottom: -7%; }
+.water-opening .water-art img { object-fit: contain; object-position: center bottom; }
+.hero-street { position: absolute; z-index: 1; right: 4vw; bottom: 0; width: min(36vw, 500px); height: 82%; opacity: .82; }
+.hero-street img { object-fit: contain; object-position: right bottom; }
+.water-opening .water-copy {
+  z-index: 3;
+  width: min(690px, 84vw);
+  margin-left: clamp(24px, 8vw, 130px);
+  padding: 70px 0 190px;
+}
+.water-opening .guide-kicker { color: #2d3f91; }
+.water-opening .water-copy h1 {
+  max-width: 700px;
+  margin-bottom: 28px;
+  color: #293a91;
+  font-family: Impact, "Arial Narrow", sans-serif;
+  font-size: clamp(58px, 7.2vw, 110px);
+  font-weight: 400;
+  line-height: .94;
+  letter-spacing: -.025em;
+  text-transform: uppercase;
+}
+.water-opening .water-copy > p:not(.guide-kicker) { max-width: 580px; color: #164b4b; font-size: clamp(17px, 1.55vw, 21px); }
+.water-opening .guide-enter { color: #293a91; border-color: #293a91; }
+.guide-intro { background: #f1e7d5; }
+.guide-intro h2, .guide-visit h2 {
+  color: #26398f;
+  font-family: Impact, "Arial Narrow", sans-serif;
+  font-weight: 400;
+  line-height: .96;
+  letter-spacing: -.015em;
+  text-transform: uppercase;
+}
+.zone-index { background: #123f40; }
+.zone-index a span { color: #e8a44d; }
+.guide-zone {
+  min-height: auto;
+  grid-template-columns: minmax(360px, 43%) 1fr;
+  padding: clamp(55px, 7vw, 110px) clamp(24px, 6vw, 96px);
+  gap: clamp(45px, 7vw, 110px);
+  align-items: start;
+  background: #f8f3ea;
+}
+.guide-zone:nth-child(even) { background: #eee5d5; }
+.zone-image {
+  min-height: 0;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  border: 12px solid white;
+  border-bottom-width: 82px;
+  border-radius: 3px;
+  box-shadow: 0 18px 45px rgba(30,38,35,.16);
+  transform: rotate(-.7deg);
+}
+.guide-zone:nth-child(even) .zone-image { transform: rotate(.7deg); }
+.zone-image img { object-fit: cover; filter: sepia(.12) saturate(.82) contrast(1.04); }
+.zone-caption {
+  left: 12px;
+  right: 12px;
+  bottom: -69px;
+  max-width: none;
+  padding: 10px 8px;
+  color: #173f40;
+  background: transparent;
+}
+.zone-caption strong { font-size: 14px; }
+.zone-caption span { color: #4e6563; font-size: 10px; }
+.zone-copy { padding: 24px 0 0; }
+.zone-copy h2 {
+  color: var(--zone);
+  font-family: Impact, "Arial Narrow", sans-serif;
+  font-size: clamp(46px, 5vw, 74px);
+  font-weight: 400;
+  line-height: .96;
+  letter-spacing: -.015em;
+  text-transform: uppercase;
+}
+.zone-number {
+  position: static;
+  width: fit-content;
+  margin-bottom: 30px;
+  padding: 8px 12px;
+  color: white;
+  background: var(--zone);
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .13em;
+}
+.zone-number span { display: inline; margin-right: 7px; }
+.zone-text { font-weight: 700; }
+.zone-explore-grid section { background: #fffaf1; }
+.water-closing { background: #102650; }
+.water-closing .water-art { height: min(56.25vw, 100%); top: auto; bottom: -7%; }
+.water-closing .water-art img { object-fit: contain; object-position: center bottom; opacity: .55; }
+.water-closing .water-copy h2 { font-family: Impact, "Arial Narrow", sans-serif; text-transform: uppercase; letter-spacing: -.015em; }
+.guide-visit { background: #f1e7d5; }
+
+@media (max-width: 800px) {
+  .guide-header { height: 76px; }
+  .water-opening { padding-top: 76px; display: block; }
+  .hero-street { right: -16%; width: 72vw; height: 58%; opacity: .28; }
+  .water-opening .water-copy { margin-left: 22px; padding: 90px 0 210px; }
+  .water-opening .water-copy h1 { font-size: clamp(50px, 15vw, 74px); }
+  .water-opening .water-art { height: 56.25vw; bottom: 0; }
+  .guide-zone, .guide-zone:nth-child(even) { grid-template-columns: 1fr; padding: 58px 24px 78px; gap: 56px; }
+  .guide-zone:nth-child(even) .zone-image, .guide-zone:nth-child(even) .zone-copy { order: initial; }
+  .zone-image { width: min(100%, 520px); aspect-ratio: 4 / 5; }
+  .zone-copy { padding: 0; }
+}
+
 /* Those Who Stayed exhibition */
 .tws-page {
   --tws-ink: #0d3540;
