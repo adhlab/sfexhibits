@@ -2696,6 +2696,20 @@ body { text-rendering: optimizeLegibility; }
 .zone-copy .guide-kicker { color: var(--zone); }
 .zone-copy h2 { margin: 0 0 30px; max-width: 700px; color: var(--guide-ink); font-family: Georgia, serif; font-size: clamp(45px, 5.3vw, 78px); font-weight: 400; line-height: .95; letter-spacing: -.045em; }
 .zone-text { margin: 0; max-width: 640px; font-size: clamp(17px, 1.5vw, 21px); line-height: 1.6; }
+.zone-deep-dive { max-width: 640px; margin-top: 26px; }
+.zone-deep-dive p { margin: 0 0 17px; font-size: 16px; line-height: 1.68; }
+.zone-explore { width: 100%; max-width: 650px; margin-top: 22px; border-top: 1px solid var(--zone); border-bottom: 1px solid var(--zone); }
+.zone-explore summary { padding: 18px 2px; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--zone); cursor: pointer; list-style: none; font-size: 12px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.zone-explore summary::-webkit-details-marker { display: none; }
+.zone-explore summary b { font-family: Georgia, serif; font-size: 28px; font-weight: 400; line-height: .6; transition: transform .2s ease; }
+.zone-explore[open] summary b { transform: rotate(45deg); }
+.zone-explore-grid { padding: 4px 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.zone-explore-grid section { padding: 20px; background: color-mix(in srgb, var(--zone), transparent 92%); }
+.zone-explore-grid h3 { margin: 0 0 13px; color: var(--zone); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.zone-explore-grid p, .zone-explore-grid li { font-family: Georgia, serif; font-size: 15px; line-height: 1.5; }
+.zone-explore-grid p { margin: 0; }
+.zone-explore-grid ul { margin: 0; padding-left: 18px; }
+.zone-explore-grid li + li { margin-top: 7px; }
 .zone-copy aside { margin-top: 38px; padding: 20px 0 0 24px; max-width: 590px; border-top: 1px solid color-mix(in srgb, var(--zone), transparent 55%); border-left: 4px solid var(--zone); }
 .zone-copy aside span { color: var(--zone); font-size: 10px; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
 .zone-copy aside p { margin: 8px 0 0; font-family: Georgia, serif; font-size: 18px; font-style: italic; line-height: 1.45; }
@@ -2728,6 +2742,7 @@ body { text-rendering: optimizeLegibility; }
   .zone-copy { padding: 86px 25px 78px; }
   .zone-number { top: 24px; right: 24px; font-size: 38px; }
   .zone-copy h2 { padding-right: 24px; }
+  .zone-explore-grid { grid-template-columns: 1fr; gap: 12px; }
   .guide-visit { grid-template-columns: 1fr; gap: 20px; }
   .guide-footer { grid-template-columns: 1fr; align-items: start; min-height: auto; }
   .guide-footer img { width: 220px; }

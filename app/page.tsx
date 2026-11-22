@@ -126,6 +126,89 @@ const zones = [
   },
 ];
 
+const zoneDetails: Record<string, { story: string[]; highlights: string[]; reveal: string }> = {
+  "living-room": {
+    story: [
+      "A family photograph is never only a record of faces. The setting, clothing, arrangement, and objects in the frame show how people understood themselves and their place in the world. Displayed at home, portraits also introduced one generation to another.",
+      "Richard Henry Beadle worked as a photographer in Jackson during the late nineteenth and early twentieth centuries. His portraits form an important visual record of Black life in the city at a time when African Americans were too often reduced to stereotypes in popular images.",
+    ],
+    highlights: ["Portraits as family memory", "The living room as a place for storytelling", "Black photographers shaping the historical record"],
+    reveal: "Choose one photograph nearby. Before reading its label, name three details you notice. What do those details suggest—and what can the photograph not tell you?",
+  },
+  fashion: {
+    story: [
+      "Getting dressed could be practical, creative, and political all at once. A carefully made dress, pressed suit, or Sunday hat communicated pride and belonging, even within a society determined to deny Black people dignity.",
+      "Much of this style depended on skilled work. Seamstresses, laundresses, milliners, barbers, and beauticians turned knowledge of fabric, fit, grooming, and repair into income. Their labor helped families look their best while building independent livelihoods.",
+    ],
+    highlights: ["Handmade and altered clothing", "Church, work, and special-occasion dress", "Style as skill, pleasure, and self-definition"],
+    reveal: "Find one detail you would wear today. What does your choice say about you? Style can connect generations without making them identical.",
+  },
+  "kitchen-table": {
+    story: [
+      "Meals began long before anyone sat down. Growing, buying, preserving, cooking, and serving food required time and knowledge. Families adapted recipes to what was available and made limited resources stretch across households.",
+      "Tables also held work that had nothing to do with eating. Bills were counted, lessons completed, clothes mended, church events planned, and neighborhood news exchanged. In this everyday setting, private care could become collective action.",
+    ],
+    highlights: ["Recipes and knowledge passed by practice", "Food shared beyond one household", "Planning, organizing, and problem-solving"],
+    reveal: "Picture a table important to you. Who gathers there? What is exchanged besides food? Add one sound, smell, or phrase to the memory.",
+  },
+  midwives: {
+    story: [
+      "For generations, Black midwives provided essential care where hospitals and physicians were inaccessible, unaffordable, or segregated. They traveled to homes, attended births, monitored mothers and infants, and remained trusted advisers after delivery.",
+      "Virginia Scott-Ford was part of this tradition in Jackson. Midwifery knowledge grew through experience, apprenticeship, and close relationships. During the twentieth century, new state rules increasingly monitored and restricted Black midwives, even as communities continued to rely on them.",
+    ],
+    highlights: ["Birth attended in the home", "Knowledge passed from woman to woman", "Care before, during, and after delivery"],
+    reveal: "The word “expert” often brings institutions to mind. What changes when expertise is built through practice, trust, and responsibility to neighbors?",
+  },
+  commerce: {
+    story: [
+      "In segregated Jackson, Black-owned businesses met needs that white establishments ignored or refused to serve. Grocers, restaurants, drugstores, and street vendors created jobs and kept money circulating within the community.",
+      "A neighborhood store depended on relationships. Owners knew customers, sometimes extended credit, and heard local news as people came and went. Farish Street connected these daily exchanges to a larger district of Black enterprise and entertainment.",
+    ],
+    highlights: ["Food access and informal credit", "Black ownership under segregation", "Stores as neighborhood information hubs"],
+    reveal: "Imagine tracing one dollar spent at a neighborhood store. Who might earn it, spend it again, or benefit from it before it leaves the community?",
+  },
+  "barber-beauty": {
+    story: [
+      "Personal care businesses offered services, but they also offered time and space. Regular appointments made barbershops and salons dependable places for conversation, humor, advice, and debate.",
+      "Owners and workers combined technical skill with entrepreneurship. Their businesses could provide economic independence while allowing customers to define beauty and presentation on their own terms.",
+    ],
+    highlights: ["Skilled hands and independent business", "Conversation across generations", "Beauty defined within Black communities"],
+    reveal: "Why do some conversations happen more easily while our hands are busy? Think of a place where a routine service creates trust over time.",
+  },
+  labor: {
+    story: [
+      "The work that sustained Black families crossed the usual boundary between home and job. Farming, hauling, construction, laundry, cooking, childcare, and repair could happen in several places during the same day.",
+      "After emancipation, sharecropping and tenant farming kept many families tied to land they did not own through debt. Moving to Jackson could open new opportunities, but domestic service and manual labor often remained poorly paid and publicly unrecognized.",
+    ],
+    highlights: ["Paid and unpaid work", "Rural knowledge carried into the city", "Labor hidden from official records"],
+    reveal: "Look around the room and identify three kinds of work behind what you see. Whose hands made, cleaned, moved, repaired, or preserved it?",
+  },
+  "front-porch": {
+    story: [
+      "A porch belongs to a house, but it faces the neighborhood. That position made it useful for greeting visitors, supervising children, cooling off, completing chores, and observing the life of the street.",
+      "Porches made connection informal. A person did not always need an invitation or appointment to stop, wave, share news, or ask for help. Repeated encounters turned proximity into relationship.",
+    ],
+    highlights: ["A threshold between private and public", "Work, rest, and supervision", "Everyday contact building trust"],
+    reveal: "Spend thirty seconds simply noticing the space around you. Who can see whom? Where would you sit to welcome a neighbor—or to have a private conversation?",
+  },
+  churches: {
+    story: [
+      "Black congregations built institutions in a society that excluded them from many public spaces. Worship was central, but church buildings also hosted lessons, meals, music, meetings, fundraising, and mutual aid.",
+      "These spaces helped people practice leadership and organize collective responses to community needs. Their strength came not only from prominent leaders, but from ushers, cooks, musicians, teachers, donors, and volunteers.",
+    ],
+    highlights: ["Faith expressed through service", "Music, education, and public gathering", "Many small contributions sustaining an institution"],
+    reveal: "A community institution is built by more people than history usually names. Choose one overlooked role and imagine what would stop without it.",
+  },
+  reflection: {
+    story: [
+      "History is not only what happened. It is also what people save, name, share, and revisit. The survival of the Scott-Ford Houses—and the stories connected to them—depends on descendants, neighbors, researchers, and visitors working together.",
+      "The zones in this exhibition are connected by ordinary acts repeated over time. A meal, a photograph, a haircut, a birth, a worship service, or a conversation on the porch can become part of a much larger history of endurance.",
+    ],
+    highlights: ["Everyday care as historical action", "Preservation as a shared responsibility", "Your own place in the continuing story"],
+    reveal: "Choose one word for what you are taking with you. Care? Skill? Memory? Place? Add your own, then tell someone why you chose it.",
+  },
+};
+
 export default function Home() {
   return (
     <main id="top" className="guide-page">
@@ -170,6 +253,7 @@ export default function Home() {
       <div className="guide-zones">
         {zones.map((zone, index) => {
           const next = zones[index + 1];
+          const details = zoneDetails[zone.id];
           return (
             <section id={zone.id} className={`guide-zone tone-${zone.tone}`} key={zone.id} aria-labelledby={`${zone.id}-title`}>
               <div className="zone-image">
@@ -181,6 +265,22 @@ export default function Home() {
                 <p className="guide-kicker">{zone.eyebrow}</p>
                 <h2 id={`${zone.id}-title`}>{zone.title}</h2>
                 <p className="zone-text">{zone.copy}</p>
+                <div className="zone-deep-dive">
+                  {details.story.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                </div>
+                <details className="zone-explore">
+                  <summary><span>Explore this zone</span><b aria-hidden="true">+</b></summary>
+                  <div className="zone-explore-grid">
+                    <section>
+                      <h3>Look and listen for</h3>
+                      <ul>{details.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul>
+                    </section>
+                    <section>
+                      <h3>Try this</h3>
+                      <p>{details.reveal}</p>
+                    </section>
+                  </div>
+                </details>
                 <aside><span>While you’re here</span><p>{zone.prompt}</p></aside>
                 {next && <a className="zone-next" href={`#${next.id}`}>Next: {next.title} <span aria-hidden="true">↓</span></a>}
               </div>
@@ -192,9 +292,9 @@ export default function Home() {
       <section className="water-threshold water-closing" aria-labelledby="closing-title">
         <div className="water-rings" aria-hidden="true"><i /><i /><i /></div>
         <div className="water-copy">
-          <p className="guide-kicker">Return to water</p>
+          <p className="guide-kicker">A final current</p>
           <h2 id="closing-title">The water remembers.</h2>
-          <p>The exhibition ends where it began. Water recalls the forced crossing of the Middle Passage, the separations that followed, and the enduring work of making kin, place, and possibility. The current continues through every act of care carried forward.</p>
+          <p>At the end of the journey, water comes into focus. It recalls the forced crossing of the Middle Passage, the separations that followed, and the enduring work of making kin, place, and possibility. The current continues through every act of care carried forward.</p>
           <blockquote>What will you remember—and what will you help carry on?</blockquote>
         </div>
       </section>
