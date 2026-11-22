@@ -12,7 +12,7 @@ const inter = localFont({
 export const metadata: Metadata = {
   title: "Those Who Stayed | Scott Ford Houses",
   description: "A digital companion to Those Who Stayed, exploring faith, family, work, creativity, and community in Jackson's historic Farish Street neighborhood.",
-  manifest: "/manifest.webmanifest",
+  manifest: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/manifest.webmanifest`,
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

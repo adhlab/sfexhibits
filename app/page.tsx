@@ -1,5 +1,8 @@
 import Image from "next/image";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const asset = (path: string) => `${basePath}${path}`;
+
 const themes = [
   {
     number: "01",
@@ -101,7 +104,7 @@ export default function Home() {
         <div className="tws-hero-shape shape-one" />
         <div className="tws-hero-shape shape-two" />
         <div className="tws-hero-image" aria-hidden="true">
-          <Image src="/images/site/historic-scott-ford-house.png" alt="" fill priority sizes="(max-width: 800px) 100vw, 46vw" />
+          <Image src={asset("/images/site/historic-scott-ford-house.png")} alt="" fill priority sizes="(max-width: 800px) 100vw, 46vw" />
         </div>
         <div className="tws-hero-copy">
           <p className="tws-kicker">A digital companion to the exhibition</p>
@@ -122,7 +125,7 @@ export default function Home() {
           <p><em>Those Who Stayed</em> explores how care shaped everyday life: tending to health, sharing resources, raising families, worshipping, passing on knowledge, and creating spaces for rest, pleasure, and belonging.</p>
           <details className="tws-panel-link">
             <summary>View the original introduction panel</summary>
-            <Image src="/images/those-who-stayed/intro-panel.jpg" width={984} height={1600} alt="Full Those Who Stayed introductory exhibition panel" />
+            <Image src={asset("/images/those-who-stayed/intro-panel.jpg")} width={984} height={1600} alt="Full Those Who Stayed introductory exhibition panel" />
           </details>
         </div>
       </section>
@@ -144,7 +147,7 @@ export default function Home() {
               </div>
               <details className="tws-theme-panel">
                 <summary><span>Open exhibit panel</span><i aria-hidden="true">↗</i></summary>
-                <div><Image src={theme.image} width={theme.width} height={theme.height} alt={theme.alt} /></div>
+                <div><Image src={asset(theme.image)} width={theme.width} height={theme.height} alt={theme.alt} /></div>
               </details>
             </article>
           ))}
@@ -166,7 +169,7 @@ export default function Home() {
                 <em>{record.label}</em>
                 <i aria-hidden="true">View record +</i>
               </summary>
-              <Image src={record.image} width={record.width} height={record.height} alt={`${record.title}: ${record.label} exhibit record`} />
+              <Image src={asset(record.image)} width={record.width} height={record.height} alt={`${record.title}: ${record.label} exhibit record`} />
             </details>
           ))}
         </div>
