@@ -146,11 +146,10 @@ export default function Home() {
         <div className="water-rings" aria-hidden="true"><i /><i /><i /></div>
         <div className="water-copy">
           <p className="guide-kicker">A digital guide to the exhibition</p>
-          <h1 id="opening-title">Every story<br />begins in motion.</h1>
-          <p>Water carries people, memory, grief, and possibility. Here it marks a threshold into stories of Black life in Jackson—stories shaped by the long wake of the Middle Passage and by generations who made home, care, and community.</p>
+          <h1 id="opening-title">Those who stayed<br />made a way.</h1>
+          <p>Step into the spaces where Black families in Jackson made home, practiced care, built livelihoods, and sustained community across generations.</p>
           <a className="guide-enter" href="#journey">Enter the exhibition <span aria-hidden="true">↓</span></a>
         </div>
-        <p className="water-note">Begin with water</p>
       </section>
 
       <section id="journey" className="guide-intro">
