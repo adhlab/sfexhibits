@@ -56,12 +56,28 @@ const themes = [
     height: 1600,
     tone: "violet",
   },
+  {
+    number: "06",
+    title: "Community",
+    subtitle: "Around the kitchen table",
+    copy: "Preparing meals, sharing resources, raising funds, and organizing collective action connected everyday care to a broader commitment to community.",
+    image: "/images/those-who-stayed/label-2.jpg",
+    alt: "Around the Kitchen Table interpretive panel",
+    width: 914,
+    height: 1600,
+    tone: "green",
+  },
 ];
 
 const records = [
   { image: "/images/those-who-stayed/virginia-scott-ford.jpg", width: 868, height: 1600, title: "Virginia Scott-Ford", label: "The work of care" },
+  { image: "/images/those-who-stayed/mary-green-scott.jpg", width: 1600, height: 1600, title: "Mary Green Scott", label: "Property owner and entrepreneur" },
   { image: "/images/those-who-stayed/canton-midwives.jpg", width: 1600, height: 1013, title: "Midwives of Canton", label: "Community knowledge" },
   { image: "/images/those-who-stayed/richard-beadle.jpg", width: 1600, height: 1600, title: "Richard Henry Beadle", label: "Photographer" },
+  { image: "/images/those-who-stayed/beadle-marker.jpg", width: 1600, height: 1600, title: "Beadle, the Photographer", label: "A landmark of Farish Street" },
+  { image: "/images/those-who-stayed/label-3.jpg", width: 914, height: 1600, title: "Who Could Practice?", label: "State regulation of midwifery" },
+  { image: "/images/those-who-stayed/label-4.jpg", width: 914, height: 1600, title: "Where We Gathered", label: "Commerce, music, and exchange" },
+  { image: "/images/those-who-stayed/label-5.jpg", width: 914, height: 1600, title: "In the Chair", label: "Style, enterprise, and conversation" },
 ];
 
 export default function Home() {
@@ -113,7 +129,7 @@ export default function Home() {
 
       <section id="themes" className="tws-themes" aria-labelledby="themes-title">
         <header className="tws-section-heading">
-          <p>Five ways into the story</p>
+          <p>Six ways into the story</p>
           <h2 id="themes-title">Networks of care</h2>
           <p>Each pathway connects household life to the people, places, and institutions that sustained Black Jackson.</p>
         </header>
@@ -138,14 +154,14 @@ export default function Home() {
       <section id="records" className="tws-records tws-paper" aria-labelledby="records-title">
         <div className="tws-records-heading">
           <p className="tws-kicker">Lives in the archive</p>
-          <h2 id="records-title">People who made community</h2>
-          <p>The exhibition&apos;s stories are carried by named people: caregivers, photographers, educators, musicians, workers, entrepreneurs, and neighbors.</p>
+          <h2 id="records-title">People, places, and practice</h2>
+          <p>Move deeper into the exhibition through the people, gathering places, businesses, and systems that shaped everyday life in Black Jackson.</p>
         </div>
         <div className="tws-record-grid">
           {records.map((record, index) => (
             <details className="tws-record" key={record.title}>
               <summary>
-                <span>0{index + 1}</span>
+                <span>{String(index + 1).padStart(2, "0")}</span>
                 <strong>{record.title}</strong>
                 <em>{record.label}</em>
                 <i aria-hidden="true">View record +</i>
